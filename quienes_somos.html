@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Quiénes somos?</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 40px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #007bff;
+    }
+    p {
+      line-height: 1.6;
+      color: #333;
+    }
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: white;
+      background-color: #007bff;
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
+    a:hover {
+      background-color: #0056b3;
+    }
+      .imagenes-quienes {
+    display: flex;
+    justify-content: center; /* centra las imágenes horizontalmente */
+    gap: 15px;               /* espacio entre imágenes */
+    margin-top: 30px;        /* separación del texto */
+    flex-wrap: wrap;         /* permite que bajen si son muchas */
+  }
+
+  .imagenes-quienes img {
+    width: 200px;            /* tamaño de cada imagen */
+    height: 150px;
+    object-fit: cover;       /* recorta sin deformar */
+    border-radius: 10px;     /* bordes redondeados */
+    box-shadow: 0 0 10px rgba(0,0,0,0.2); /* sombra suave */
+    transition: transform 0.3s ease;
+  }
+
+  .imagenes-quienes img:hover {
+   transform: scale(1.05);  /* efecto de zoom al pasar el mouse */
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>¿Quiénes somos?</h1>
+    <p>
+      Con la rápida evolución de las tecnologías y las comunicaciones en los últimos años, se ha incrementado la necesidad de contar con infraestructuras de redes modernas, eficientes y seguras en los centros educativos, que faciliten la gestión y el acceso a recursos digitales de forma confiable.
+En este contexto, el presente proyecto tiene como objetivo modernizar y optimizar la conectividad del Complejo Educativo Paysandú, ubicado en las instalaciones de lo que fue anteriormente la terminal de ómnibus, en la intersección de calles Gral. Artigas y Zorrilla de San Martín .
+
+    </p>
+    <p>
+      Este sistema fue creado como un proyecto educativo para demostrar cómo combinar HTML, CSS y JavaScript en una aplicación funcional.
+    </p>
+  
+      <!-- 🔹 Aquí van las imágenes -->
+  <div class="imagenes-quienes">
+    <img src="img/Logo_PoliNet.jpg" alt="Nuestro equipo">
+    <img src="img/oficina.jpg" alt="Nuestra oficina">
+    <img src="img/trabajo.jpg" alt="En el trabajo">
+  </div>
+   <p>
+      Si querés contactarnos, escribí a: <strong>contacto@miinstitucion.edu</strong>
+    </p>
+
+    <a href="index.html">⬅ Volver al inicio</a>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }   
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        input, select, textarea, button {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 60px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .delete-btn {
+            background-color: #dc3545;
+            margin-right: 5px;
+        }
+        .delete-btn:hover {
+            background-color: #c82333;
+        }
+        .edit-btn {
+            background-color: #28a745;
+            margin-right: 5px;
+        }
+        .edit-btn:hover {
+            background-color: #218838;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .hidden {
+            display: none;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .announcement-form {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+        .form-title {
+            margin-top: 0;
+        }
+    /* 🔹 Estilos del banner */
+.banner {
+  width: 100%;
+  background-color: #ddd;
+  text-align: center;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ccc;
+}
+
+.banner img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.banner-upload {
+  margin-top: 10px;
+}
+
+.banner-upload label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* 🔹 Banner múltiple */
+.banner {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 20px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.banner-images {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+
+.banner-images img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  background-color: whitesmoke;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.banner-images img.active {
+  opacity: 1;
+}
+
+.banner-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none; /* evita que interfiera con clics del banner */
+}
+
+.banner-controls button {
+  pointer-events: all;
+  background-color: rgba(0,0,0,0);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 18px;
+}
+
+.banner-controls button:hover {
+  background-color: rgba(0,0,0,.8);
+}

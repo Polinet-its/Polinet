@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Gestión de Profesores</title>
+
+  <!-- Enlazamos el CSS externo -->
+  <link rel="stylesheet" href="style/main.css">
+</head>
+<body>
+
+  <!-- 🔹 Banner con múltiples imágenes -->
+  <div class="banner">
+    <div class="banner-images">
+      <img src="img/tetra_cables.png" class="active" alt="Banner 1">
+      <img src="img/Logo_PoliNet.jpg" alt="Banner 2">
+      <img src="img/prueba_2.jpg" alt="Banner 3">
+    </div>
+    <div class="banner-controls">
+      <button id="prevBtn"></button>
+      <button id="nextBtn"></button>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- Pantalla de Inicio de Sesión -->
+    <div id="loginScreen">
+      <h1>Iniciar Sesión</h1>
+      <form id="loginForm">
+        <input type="text" id="loginUsername" placeholder="Usuario" required>
+        <input type="password" id="loginPassword" placeholder="Contraseña" required>
+        <button type="submit">Iniciar Sesión</button>
+      </form>
+      <p>No tienes cuenta? <button id="showRegister">Regístrate aquí</button></p>
+    </div>
+
+    <!-- Registro -->
+    <div id="registerScreen" class="hidden">
+      <h1>Registro de Profesor</h1>
+      <form id="registerForm">
+        <input type="text" id="regUsername" placeholder="Usuario" required>
+        <input type="text" id="regFullName" placeholder="Nombre completo" required>
+        <input type="text" id="regSubject" placeholder="Materia (ej: Matemáticas)" required>
+        <input type="password" id="regPassword" placeholder="Contraseña" required>
+        <button type="submit">Registrarse</button>
+        <button type="button" id="backToLogin">Volver a Iniciar Sesión</button>
+      </form>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="hidden">
+      <h1>Bienvenido, <span id="welcomeUser"></span></h1>
+      <button id="logout">Cerrar Sesión</button>
+
+      <h2>Asignar Salón</h2>
+      <form id="assignForm">
+        <input type="text" id="classroom" placeholder="Salón (ej: A-101)" required>
+        <button type="submit">Asignar Salón</button>
+      </form>
+
+      <table id="assignmentTable">
+        <thead>
+          <tr>
+            <th>Acciones</th>
+            <th>Nombre Completo</th>
+            <th>Materia</th>
+            <th>Salón Asignado</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <h2>Anuncios de Adscripción</h2>
+      <table id="announcementsTable">
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Descripción</th>
+            <th>Fecha</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <!-- Formulario de anuncios -->
+      <div class="announcement-form">
+        <h3 id="formTitle" class="form-title">Agregar Nuevo Anuncio</h3>
+        <form id="announcementForm">
+          <input type="text" id="annTitle" placeholder="Título del anuncio" required>
+          <textarea id="annDescription" placeholder="Descripción del anuncio" required></textarea>
+          <button type="submit" id="annSubmitBtn">Agregar Anuncio</button>
+          <button type="button" id="cancelEdit" class="hidden">Cancelar</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer">
+      <a href="quienes_somos.html" target="">¿Quiénes somos?</a>
+    </div>
+  </div>
+
+  <!-- Enlazamos el JS externo -->
+  <script src="js/app.js"></script>
+</body>
+</html>
