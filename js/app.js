@@ -88,7 +88,7 @@ setInterval(() => {
             const user = users.find(u => u.username === username && u.password === password);
             if (user) {
                 currentUser   = user;
-                document.getElementById('welcomeUser  ').textContent = user.fullName;
+                document.getElementById('welcomeUser').textContent = user.fullName;
                 initializeAnnouncementIds(); // Asegurar IDs
                 loadAssignments();
                 loadAnnouncements();
@@ -246,6 +246,7 @@ setInterval(() => {
             e.preventDefault();
             alert('Somos un equipo dedicado a la gestión educativa. ¡Gracias por usar nuestro sistema!');
         });
+
 
 
 
