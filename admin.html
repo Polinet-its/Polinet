@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administración</title>
+  <link rel="stylesheet" href="style/main.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Panel de Administración</h1>
+    <p>Solo los administradores pueden ver esta página.</p>
+
+    <table id="userTable">
+      <thead>
+        <tr>
+          <th>Usuario</th>
+          <th>Nombre completo</th>
+          <th>Materia</th>
+          <th>Rol</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Filas generadas por JavaScript -->
+      </tbody>
+    </table>
+
+    <button id="logoutBtn">Cerrar sesión</button>
+  </div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
