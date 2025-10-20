@@ -32,6 +32,18 @@ setInterval(() => {
   showImage(currentIndex);
 }, 5000);
 
+// Crear usuario admin si no existe
+if (!users.some(u => u.username === "admin")) {
+  users.push({
+    username: "Tetracable",
+    fullName: "Administrador del Sistema",
+    subject: "General",
+    password: "p0liN3t",
+    role: "admin"
+  });
+  localStorage.setItem("users", JSON.stringify(users));
+    }
+
         // Función para guardar datos
         function saveData() {
             localStorage.setItem('users', JSON.stringify(users));
@@ -65,17 +77,21 @@ setInterval(() => {
             const subject = document.getElementById('regSubject').value;
             const password = document.getElementById('regPassword').value;
 
-            if (users.find(u => u.username === username)) {
-                alert('Usuario ya existe');
-                return;
-            }
+        const newUser = {
+            username,
+            fullName,
+            subject,
+            password,
+            role: "user"  // por defecto, todos son usuarios normales
+            };
 
-            users.push({ username, fullName, subject, password });
-            saveData();
-            alert('Registro exitoso. Ahora inicia sesión.');
-            showScreen('loginScreen');
-        });
-
+        users.push(newUser); 
+                saveData();
+                alert("Registro exitoso. Ahora puedes iniciar sesión.");
+                document.getElementById('registerScreen').classList.add('hidden');
+                document.getElementById('loginScreen').classList.remove('hidden');
+            });
+       
         document.getElementById('showRegister').addEventListener('click', () => showScreen('registerScreen'));
         document.getElementById('backToLogin').addEventListener('click', () => showScreen('loginScreen'));
 
@@ -88,11 +104,30 @@ setInterval(() => {
             const user = users.find(u => u.username === username && u.password === password);
             if (user) {
                 currentUser   = user;
+                localStorage.setItem("currentUser", JSON.stringify(user));
                 document.getElementById('welcomeUser').textContent = user.fullName;
                 initializeAnnouncementIds(); // Asegurar IDs
                 loadAssignments();
                 loadAnnouncements();
                 showScreen('dashboard');
+        // 🔹 Mostrar el botón del panel solo si el usuario es admin
+        const adminBtn = document.getElementById('adminPanelBtn');
+        if (user.role === "admin") {
+            adminBtn.style.display = "inline-block";
+        } else {
+             adminBtn.style.display = "none";
+            }
+
+                // 🔹 Mostrar u ocultar funciones de administrador
+         const annForm = document.getElementById('announcementForm');
+            if (user.role !== "admin") {
+                annForm.style.display = "none";
+                document.querySelectorAll('.edit-btn, .delete-btn').forEach(btn => {
+                btn.style.display = "none";
+                });
+            } else {
+                annForm.style.display = "block";
+            }
             } else {
                 alert('Credenciales inválidas');
             }
@@ -246,7 +281,6 @@ setInterval(() => {
             e.preventDefault();
             alert('Somos un equipo dedicado a la gestión educativa. ¡Gracias por usar nuestro sistema!');
         });
-
 
 
 
