@@ -33,7 +33,8 @@ setInterval(() => {
 }, 5000);
 
 // Crear usuario admin si no existe
-if (!users.some(u => u.username === "admin")) {
+  const adminExists = users.some(u => u.username === "Tetracable" && u.role === "admin");{
+  if (!adminExists) {
   users.push({
     username: "Tetracable",
     fullName: "Administrador del Sistema",
@@ -281,6 +282,3 @@ if (!users.some(u => u.username === "admin")) {
             e.preventDefault();
             alert('Somos un equipo dedicado a la gestión educativa. ¡Gracias por usar nuestro sistema!');
         });
-
-
-
