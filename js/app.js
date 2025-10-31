@@ -5,6 +5,18 @@
         let currentUser   = null;
         let editingAnnouncementId = null; // Para editar anuncios
 
+// Crear usuario admin si no existe
+const adminExists = users.some(u => u.username === "Tetracable" && u.role === "admin");
+if (!adminExists) {
+  users.push({
+    username: "Tetracable",
+    fullName: "Administrador del Sistema",
+    subject: "General",
+    password: "p0liN3t",
+    role: "admin"
+  });
+  localStorage.setItem("users", JSON.stringify(users));
+}
        // 🔹 Banner carrusel
 const bannerImages = document.querySelectorAll('.banner-images img');
 let currentIndex = 0;
@@ -32,18 +44,7 @@ setInterval(() => {
   showImage(currentIndex);
 }, 5000);
 
-// Crear usuario admin si no existe
-  const adminExists = users.some(u => u.username === "Tetracable" && u.role === "admin");{
-  if (!adminExists) {
-  users.push({
-    username: "Tetracable",
-    fullName: "Administrador del Sistema",
-    subject: "General",
-    password: "p0liN3t",
-    role: "admin"
-  });
-  localStorage.setItem("users", JSON.stringify(users));
-    }
+
 
         // Función para guardar datos
         function saveData() {
@@ -282,3 +283,4 @@ setInterval(() => {
             e.preventDefault();
             alert('Somos un equipo dedicado a la gestión educativa. ¡Gracias por usar nuestro sistema!');
         });
+
